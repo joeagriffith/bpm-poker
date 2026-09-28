@@ -1,0 +1,23 @@
+[project]
+name = "bpm-poker"
+version = "0.1.0"
+description = "Live heart rates for a poker table"
+requires-python = ">=3.13"
+dependencies = [
+    "bleak>=3.0.2",
+    "fastapi>=0.141.1",
+    "matplotlib>=3.11.2",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+bpm-poker = "bpm_poker.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPM Poker</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23ff5a3c' d='M12 21s-7.5-4.6-10-9.2C.4 8.6 2.3 4.5 6.2 4.5c2.2 0 3.8 1.3 5.8 3.4 2-2.1 3.6-3.4 5.8-3.4 3.9 0 5.8 4.1 4.2 7.3C19.5 16.4 12 21 12 21z'/></svg>">
+  <link rel="stylesheet" href="/static/display.css">
+</head>
+<body>
+  <div id="stage">
+    <main id="table"></main>
+    <div id="overlay"></div>
+  </div>
+
+  <div id="hint">Click for full screen · drag tiles to move them · drop one on another to swap</div>
+  <div id="offline">Reconnecting to BPM Poker…</div>
+
+  <template id="tile-tpl">
+    <div class="seat">
+      <div class="tile">
+        <div class="noise"></div>
+        <div class="name"></div>
+        <div class="reading">
+          <svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.6 2.3 4.5 6.2 4.5c2.2 0 3.8 1.3 5.8 3.4 2-2.1 3.6-3.4 5.8-3.4 3.9 0 5.8 4.1 4.2 7.3C19.5 16.4 12 21 12 21z"/></svg>
+          <span class="bpm">--</span>
+          <span class="delta"></span>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script type="module" src="/static/display.js"></script>
+</body>
+</html>

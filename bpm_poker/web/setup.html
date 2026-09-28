@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPM Poker Setup</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23ff5a3c' d='M12 21s-7.5-4.6-10-9.2C.4 8.6 2.3 4.5 6.2 4.5c2.2 0 3.8 1.3 5.8 3.4 2-2.1 3.6-3.4 5.8-3.4 3.9 0 5.8 4.1 4.2 7.3C19.5 16.4 12 21 12 21z'/></svg>">
+  <link rel="stylesheet" href="/static/setup.css">
+</head>
+<body>
+  <header>
+    <h1>BPM<span>♥</span>POKER <small>setup</small></h1>
+    <div class="game">
+      <span>Game clock <b id="clock">0:00</b></span>
+      <button id="new-game" title="Reset everyone's baseline and the clock">New game</button>
+      <a class="button primary" href="/" target="bpm-display">Open display ↗</a>
+    </div>
+  </header>
+
+  <section class="controls">
+    <label>Layout
+      <span class="seg" id="layout">
+        <button data-v="table">Flat in the middle</button><button data-v="end">End of table</button><button data-v="grid">Grid</button>
+      </span>
+    </label>
+    <label>Screen
+      <span class="seg">
+        <button id="turn" title="Turn the picture a quarter turn, for a monitor stood on its side">Turn 90°</button><button id="flip" title="Turn the picture upside down">Flip</button>
+      </span>
+    </label>
+    <label>Rotate seats
+      <span class="seg">
+        <button id="rot-left" title="Move everyone one seat anticlockwise">⟲</button><button id="rot-right" title="Move everyone one seat clockwise">⟳</button>
+      </span>
+    </label>
+    <label>Spike sensitivity
+      <span class="seg" id="sensitivity">
+        <button data-v="0.7">Chill</button><button data-v="1">Normal</button><button data-v="1.4">Twitchy</button>
+      </span>
+    </label>
+  </section>
+
+  <main>
+    <section class="panel">
+      <h2>At the table <small>seat order runs clockwise · drag here or on the display to rearrange</small></h2>
+      <form id="add-player">
+        <input id="new-name" placeholder="Add a player…" autocomplete="off">
+        <button type="submit" class="primary">Add</button>
+      </form>
+      <ol id="seated" class="players"></ol>
+      <h3>Not playing tonight</h3>
+      <ul id="bench" class="players"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Devices <small>anything broadcasting heart rate shows up here</small></h2>
+      <ul id="devices"></ul>
+      <p class="help">
+        Nothing showing? A strap only broadcasts when it's worn with damp contacts.
+        Whoops need <b>Broadcast Heart Rate</b> on in the Whoop app (More → Device Settings).
+        Close other apps (Coospo, Strava) that might be holding the connection.
+      </p>
+    </section>
+  </main>
+
+  <div id="offline">Can't reach the BPM Poker server. Is it still running?</div>
+  <script type="module" src="/static/setup.js"></script>
+</body>
+</html>
